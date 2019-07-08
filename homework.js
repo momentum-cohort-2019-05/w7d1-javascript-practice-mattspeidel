@@ -1,13 +1,13 @@
 // 1. Set the variable `givenName` to the string "Addison".
 
-var givenName = 'Addison'
+let givenName = 'Addison'
 
 // 2. Set candies equal to 20, people to 6, and leftover equal
 // to the remainder of dividing 20 by 6.
 
-var candies = 20
-var people = 6
-var leftover = candies % people
+let candies = 20
+let people = 6
+let leftover = candies % people
 
 // 3. Create a function called greeting that returns "Hello, <name>!",
 // where <name> is the name given as an argument to the function.
@@ -117,7 +117,7 @@ function sum(numbers) {
 
 function average(numbers) {
     if (numbers.length > 0) {
-        var total = numbers.reduce(function(a, b) { return a + b}, 0)
+        let total = numbers.reduce(function(a, b) { return a + b}, 0)
         return total / numbers.length
 }   else {
 }
@@ -129,7 +129,7 @@ function average(numbers) {
 
 function minimum(numbers) {
     if (numbers.length > 0) {
-        var output = Math.min.apply(null, numbers)
+        let output = Math.min.apply(null, numbers)
         return output
 }   else {
 }
@@ -159,3 +159,20 @@ function minimum(numbers) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
+
+function selectionSort(numbers) {
+    let numbersCopy = numbers.slice(0)
+    let len = numbersCopy.length
+    for(let idx = 0; idx < len; idx++) {
+        let minIdx = idx
+        for(let inc = idx + 1; inc < len; inc++){
+            if (numbersCopy[inc] < numbersCopy[minIdx]) {
+                minIdx = inc
+            }
+        }
+        let place = numbersCopy[idx]
+        numbersCopy[idx] = numbersCopy[minIdx]
+        numbersCopy[minIdx] = place
+    }
+    return numbersCopy
+}
