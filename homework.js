@@ -116,16 +116,24 @@ function sum(numbers) {
 // and returns the average of those numbers.
 
 function average(numbers) {
-    var total = numbers.reduce(function(a, b) { return a + b}, 0)
-    if (total === NaN) {
-        return undefined
-    } else {
+    if (numbers.length > 0) {
+        var total = numbers.reduce(function(a, b) { return a + b}, 0)
         return total / numbers.length
-    }
+}   else {
 }
+}
+
 
 // 12. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+
+function minimum(numbers) {
+    if (numbers.length > 0) {
+        var output = Math.min.apply(null, numbers)
+        return output
+}   else {
+}
+}
 
 // 13. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -150,3 +158,4 @@ function average(numbers) {
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+
