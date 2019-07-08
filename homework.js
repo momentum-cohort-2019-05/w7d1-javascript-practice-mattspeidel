@@ -63,9 +63,21 @@ function celsiusToFahrenheit(c) {
 // Absolute zero (0 K) is equivalent to −273.15 C.
 // 1 degree Kelvin equals 1 degree Celsius.
 
+function fahrenheitToKelvin(f) {
+    return ((f - 32) * 5 / 9) + 273.15
+}
+
 // 8. Create a function called lesser that takes two numbers as
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
+
+function lesser(num1, num2) {
+    if (num1 < num2) {
+        return num1
+    }   else if (num2 < num1) {
+        return num2
+    }
+}
 
 // 9. Create a function called multigreeting that takes a name
 // and a language code and returns a version of "Hello, <name>!"
@@ -79,11 +91,38 @@ function celsiusToFahrenheit(c) {
 //
 // If any other language code is used, return nothing.
 
+function multigreeting(name, language) {
+    if (language === 'en') {
+        return `Hello, ${name}!`
+    }   else if (language === 'es') {
+            return `¡Hola, ${name}!` 
+    }   else if (language === 'fr') {
+            return `Bonjour, ${name}!`
+    }   else if (language === 'eo') {
+            return `Saluton, ${name}!`
+    }   else {
+            return
+    }
+}
+
 // 10. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(numbers) {
+    return numbers.reduce(function(a, b) { return a + b}, 0)
+}
+
 // 11. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
+function average(numbers) {
+    var total = numbers.reduce(function(a, b) { return a + b}, 0)
+    if (total === NaN) {
+        return undefined
+    } else {
+        return total / numbers.length
+    }
+}
 
 // 12. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
